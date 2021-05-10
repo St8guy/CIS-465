@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Methodology</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	</head>
+	
+	<div class="container">
+		<body>
+			<h2>Methodology</h2>
+			
+			<h4>The major part of each program is obtaining the threshold value that will be used for mapping the original image.
+			This can be broken down into a step by step process:</h4>
+			<ol>
+				<li>Convert RGB image to Grayscale (24-bit depth to 8-bit depth)</li>
+					<ul>
+						<li>Read the image in per-pixel</li>
+						<li>Use the weighted equation: avg=0.21*r+0.72*g+0.07*b</li>
+						<li>Write the new value to the pixel</li>
+					</ul>
+				<li>Perform a Mean Smoothing Filter to the image</li>
+					<ul>
+						<li>Read in the values surrounding a central pixel (the kernal)</li>
+						<li>Find the mean value of those values</li>
+						<li>Apply the mean value to the kernal</li>
+					</ul>
+				<li>Create a histogram from the smoothed image</li>
+					<ul>
+						<li>Read image per-pixel</li>
+						<li>Store the frequency of each intensity value in the corresponding index</li>
+						<li>Chart the histogram</li>
+					</ul>
+				<li>Calculate the between-class variance for each threshold</li>
+					<ul>
+						<li>calculate the fraction of pixels above and below the current threshold value</li>
+							<img src="equations/threshold_0.jpg" width="300px" height="85px">
+						<li>Calculate the pixel intensity average</li>
+							<img src="equations/threshold_1.jpg" width="170px" height="60px">
+						<li>Calculate the class and total mean</li>
+							<img src="equations/threshold_2.jpg" width="200px" height="60px">
+						<li>Calculate the class variance and total variance</li>
+							<img src="equations/threshold_3.jpg" width="300px" height="60px">
+						<li>Calculate the between-class variance</li>
+							<img src="equations/threshold_4.jpg" width="70px" height="40px">
+					</ul>
+				<li>The threshold that has the maximum between-class variance will be used to separate the foreground and background.</li>
+				<li>Use the threshold to create a binary image with values above being mapped to black, and values below mapped to white.</li>	
+					<ul>
+						<li>After this step the Otsu process is done and the resulting image is taken as the output</li>
+						<li>The following steps are for the APT method</li>
+					</ul>
+				<li>Quantize the original image using the threshold value</li>
+				<li>Repeat the Otsu process with the new image and take the final binary image as the output</li>
+			</ol>
+			<h4>Simplified flow chart of this process:</h4>
+			<center><img src="equations/threshold_5.jpg" width="700px" height="125px"></center>
+			
+		</body>
+	</div>
+</html>

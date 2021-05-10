@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Implementation</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	</head>
+	
+	<div class="container">
+		<body>
+			<h2>Implementation</h2>
+			<h4>From the examples that are provided below it can be taken away that the Otsu, and by extension the APT method, 
+				is effective at seperating the foreground and the background only under certain conditions. As seen with the coins
+				image the fact that the background was black and that each of the objects was largely seperated. Even though they were
+				different colors, dull colors though, the process accuratly seperated the coins from the background. Similarly the stand, 
+				clock, and shades in image1 was separated from the rest of the image effectivly due to similar reasons. A stark background 
+				with similar colors throughout the image. The issue arrises with the other two photos, the first of which image2 has a wide 
+				variaty of colors with a white background. While the background was properly excluded sections of the board itself were excluded 
+				as well due to different colors being mapped to very similar shades of grey. And with the lena image the fact that the background 
+				itself has a very similar color to that of the womans skin causes an issue. As the entirety of the photo has a very similar color pallet 
+				which leads to similar greys in the background and foreground. Resulting in sections of both the be excluded and included in various places.
+				The APT process suffers from similar issues, but typically renders the forground objects more clearly. As the coins are whole in the result 
+				where as they originally had chunks missing from them in Otsu, or the clock being more readable from APT.
+				
+				<h3>Source Code Links:</h3>
+					<h4>Otsu: <a href="code/Otsu.py">Otsu.py</a></h4>
+					<h4>APT: <a href="code/APT2.py">APT2.py</a></h4>
+					
+				<h3>Original Images: (Click on any of the image titles to view the original image)</h3>
+					<center>
+						<h4><a href="images/coins.bmp">Coins.bmp</a></h4>
+							<img src="images/coins.bmp" width="400px" height="300px">
+							
+						<h4><a href="images/image1.jpg">image1.jpg</a></h4>
+							<img src="images/image1.jpg" width="400px" height="300px">
+							
+						<h4><a href="images/image2.jpg">image2.jpg</a></h4>
+							<img src="images/image2.jpg" width="400px" height="300px">
+							
+						<h4><a href="images/lena.png">lena.png</a></h4>
+							<img src="images/lena.png" width="400px" height="300px">
+					</center>
+					
+				<h3>Otsu: Gray-Scale and Mean Smoothing Filter</h3>
+					<center>
+						<h4><a href="images/Otsu/otsu0.png">Coins</a></h4>
+							<img src="images/Otsu/otsu0.png" width="400px" height="300px">
+							
+						<h4><a href="images/Otsu/otsu4.png">image1</a></h4>
+							<img src="images/Otsu/otsu4.png" width="400px" height="300px">
+						
+						<h4><a href="images/Otsu/otsu8.png">image2</a></h4>
+							<img src="images/Otsu/otsu8.png" width="400px" height="300px">
+						
+						<h4><a href="images/Otsu/otsu11.png">lena</a></h4>
+							<img src="images/Otsu/otsu11.png" width="400px" height="300px">
+					</center>
+							
+					
+				<h3>Otsu: Histogram</h3>
+					<center>
+						<h4><a href="images/Otsu/otsu1.png">Coins</a></h4>
+							<img src="images/Otsu/otsu1.png" width="400px" height="300px">
+						
+						<h4><a href="images/Otsu/otsu5.png">image1</a></h4>
+							<img src="images/Otsu/otsu5.png" width="400px" height="300px">
+						
+						<h4><a href="images/Otsu/otsu9.png">image2</a></h4>
+							<img src="images/Otsu/otsu9.png" width="400px" height="300px">
+						
+						<h4><a href="images/Otsu/otsu12.png">lena</a></h4>
+							<img src="images/Otsu/otsu12.png" width="400px" height="300px">
+					</center>
+						
+					
+				<h3>Otsu: Final Image</h3>
+					<center>
+						<h4><a href="images/Otsu/otsu2.png">Coins</a></h4>
+							<img src="images/Otsu/otsu2.png" width="400px" height="300px">
+							
+						<h4><a href="images/Otsu/otsu6.png">image1</a></h4>
+							<img src="images/Otsu/otsu6.png" width="400px" height="300px">
+							
+						<h4><a href="images/Otsu/otsu10.png">image2</a></h4>
+							<img src="images/Otsu/otsu10.png" width="400px" height="300px">
+						
+						<h4><a href="images/Otsu/otsu13.png">lena</a></h4>
+							<img src="images/Otsu/otsu13.png" width="400px" height="300px">
+							
+					</center>
+						
+				<h3>APT: Quantized Image</h3>
+					<center>
+						<h4><a href="images/Apt/apt0.png">Coins</a></h4>
+							<img src="images/Apt/apt0.png" width="400px" height="300px">
+						
+						<h4><a href="images/Apt/apt2.png">image1</a></h4>
+							<img src="images/Apt/apt2.png" width="400px" height="300px">
+							
+						<h4><a href="images/Apt/apt4.png">image2</a></h4>
+							<img src="images/Apt/apt4.png" width="400px" height="300px">
+						
+						<h4><a href="images/Apt/apt6.png">image2</a></h4>
+							<img src="images/Apt/apt6.png" width="400px" height="300px">
+					</center>
+				
+				<h3>APT: Final Image</h3>
+					<center>
+						<h4><a href="images/Apt/apt1.png">Coins</a></h4>
+							<img src="images/Apt/apt1.png" width="400px" height="300px">
+						
+						<h4><a href="images/Apt/apt3.png">image1</a></h4>
+							<img src="images/Apt/apt3.png" width="400px" height="300px">
+							
+						<h4><a href="images/Apt/apt5.png">image2</a></h4>
+							<img src="images/Apt/apt5.png" width="400px" height="300px">
+						
+						<h4><a href="images/Apt/apt7.png">image2</a></h4>
+							<img src="images/Apt/apt7.png" width="400px" height="300px">
+						
+					</center>
+		</body>
+	</div>
+</html>

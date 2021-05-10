@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Part 1</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	</head>
+	
+	<div class="container">
+		<body>
+			<h2>Part 1</h2>
+			<h3>Write programs to perform the following transformations on the following grayscale images. Click on the links to view source-code.</h3>
+			<h4>Original Images:</h4>
+				<img src="images/city.jpg" width="30%">
+				<img src="images/csu.jpg" width="30%">
+				<img src="images/lena.jpg" width="30%">
+			<h4>Grayscale Images:</h4>
+				<img src="images/city_g.jpg" width="30%">
+				<img src="images/csu_g.jpg" width="30%">
+				<img src="images/lena_g.jpg" width="30%">
+			<br>
+			
+			<h3>i) g(x,y) = (L - 1) - f(x,y) <a href = "code/RGB_Invert.py">RGB_Invert.py</a></h3>
+				<img src="images/i/city_invert.jpg" width="30%">
+				<img src="images/i/csu_invert.jpg" width="30%">
+				<img src="images/i/lena_invert.jpg" width="30%">
+			<br>
+			
+			<h3>ii) g(x,y) = {0 if f(x,y) < t, L - 1 if f(x,y) &#8805 t} <a href = "code/Binary_Image_Transformation.py">Binary_Image_Transformation.py</a></h3>
+				<h4>t = 50</h4>
+					<img src="images/ii/city_50.jpg" width="30%">
+					<img src="images/ii/csu_50.jpg" width="30%">
+					<img src="images/ii/lena_50.jpg" width="30%">
+				<h4>t = 200</h4>
+					<img src="images/ii/city_200.jpg" width="30%">
+					<img src="images/ii/csu_200.jpg" width="30%">
+					<img src="images/ii/lena_200.jpg" width="30%">
+			<br>
+			
+			<h3>iii) g(x,y) = {0 if f(x,y) < 50, f(x,y) if 50 &#8804 f(x,y) &#8805 200, 0 if f(x,y) > 200} <a href = "code/Multilevel_Transformation.py">Multilevel_Transformation.py</a></h3>
+				<img src="images/iii/city.jpg" width="30%">
+				<img src="images/iii/csu.jpg" width="30%">
+				<img src="images/iii/lena.jpg" width="30%">
+			<br>
+			
+			<h3>iv) s = clog(1 + |r|) <a href = "code/Log_Base10_Transformation.py">Log_Base10_Transformation.py</a></h3>
+				<img src="images/iv/city.jpg" width="30%">
+				<img src="images/iv/csu.jpg" width="30%">
+				<img src="images/iv/lena.jpg" width="30%">
+			<br>
+			
+			<h3>v) s = c*r<sup>n</sup> <a href = "code/Gamma_Transformation.py">Gamma_Transformation.py</a></h3>
+				<h4>n = .1</h4>
+					<img src="images/v/city_01.jpg" width="30%">
+					<img src="images/v/csu_01.jpg" width="30%">
+					<img src="images/v/lena_01.jpg" width="30%">
+				
+				<h4>n = 1</h4>
+					<img src="images/v/city_1.jpg" width="30%">
+					<img src="images/v/csu_1.jpg" width="30%">
+					<img src="images/v/lena_1.jpg" width="30%">
+					
+				<h4>n = 10</h4>
+					<img src="images/v/city_10.jpg" width="30%">
+					<img src="images/v/csu_10.jpg" width="30%">
+					<img src="images/v/lena_10.jpg" width="30%">
+			<br>
+			
+		</body>
+	</div>
+</html>
